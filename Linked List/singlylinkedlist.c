@@ -30,8 +30,7 @@ int display(LLIST *p){
     return 1;
 }
 
-int insertfront(LLIST *p, int e)
-{
+int insertfront(LLIST *p, int e){
     NODE *temp=(NODE*)malloc(sizeof(NODE));
     if(sizeof(temp)==0) return 0;
 
