@@ -2,21 +2,25 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct node{
+typedef struct node                        //node
+{
     int info;
     struct node *link;
 }NODE;
 
-typedef struct list{
+typedef struct list                       //linked list
+{
     NODE *head;
 }LLIST;
 
-int init(LLIST *p){
+int init(LLIST *p)                        //initialize the linked list head
+{
     p->head=NULL;
     return 1;
 }
 
-int display(LLIST *p){
+int display(LLIST *p)                     //display the linked list
+{
     if(p->head==NULL) return 0;
 
     NODE *temp;
@@ -30,7 +34,8 @@ int display(LLIST *p){
     return 1;
 }
 
-int insertfront(LLIST *p, int e){
+int insertfront(LLIST *p, int e)          //insert element e in the front of the linked list
+{
     NODE *temp=(NODE*)malloc(sizeof(NODE));
     if(sizeof(temp)==0) return 0;
 
@@ -41,7 +46,8 @@ int insertfront(LLIST *p, int e){
 }
 
 
-int insertback(LLIST *p, int e){
+int insertback(LLIST *p, int e)            //insert element e at the back of the linked list 
+{
     NODE *temp;
     NODE *temp1=(NODE*)malloc(sizeof(NODE));
     if(sizeof(temp)==0) return 0;
@@ -60,7 +66,8 @@ int insertback(LLIST *p, int e){
 }
 
 
-int deletefront(LLIST *p){
+int deletefront(LLIST *p)                  //delete the first element in the linked list
+{
     NODE *temp;
     temp=p->head;
     if(temp==NULL) return 0;
@@ -69,7 +76,8 @@ int deletefront(LLIST *p){
     return 1;
 }
 
-int deleteback(LLIST *p){
+int deleteback(LLIST *p)                    //delete the last element in the linked list
+{
     NODE *temp=p->head;
     NODE *pre;
     if(temp==NULL) return 0;
@@ -115,6 +123,7 @@ int deleteback(LLIST *p){
     // }
 // }
 
+//inserting element e in position p of the linked list
 int insertatposition(LLIST *p, int pos, int e)        //using one temp pointer
 {
     NODE *temp=p->head;
@@ -148,6 +157,7 @@ int insertatposition(LLIST *p, int pos, int e)        //using one temp pointer
     }
 }
 
+//delete element at position p of the linked list
 int deleteatposition(LLIST *p, int pos){
     NODE *temp=p->head;
     NODE *newnode;
@@ -184,7 +194,8 @@ int deleteatposition(LLIST *p, int pos){
 
 }
 
-int reverselist(LLIST *p){
+int reverselist(LLIST *p)                    //function to reverse the linked list
+{
     
 {
     NODE *prev = NULL;
